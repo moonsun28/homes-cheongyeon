@@ -27,16 +27,16 @@ header{height:60px;border-bottom:1px solid var(--line);display:flex;align-items:
 .logo svg{height:20px;width:auto}
 
 /* ── 히어로 ── */
-.hero{background:var(--gold);color:var(--navy);padding:52px 24px 48px;text-align:center}
+.hero{background:var(--navy);color:#fff;padding:52px 24px 48px;text-align:center}
 .hero-collab{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px}
-.homes-logo-white svg path{fill:var(--navy)}
-.collab-x{font-size:18px;font-weight:800;color:rgba(2,4,37,.4)}
+.homes-logo-white svg path{fill:#fff}
+.collab-x{font-size:18px;font-weight:800;color:rgba(255,255,255,.4)}
 .cheongyeon-logo{background:#fff;border-radius:8px;padding:5px 12px;display:flex;align-items:center}
 .cheongyeon-logo svg{height:22px;width:auto}
 .hero h1{font-size:34px;font-weight:800;line-height:1.25;margin-bottom:12px;letter-spacing:-.5px}
-.hero h1 em{color:var(--navy);font-style:normal;text-decoration:underline;text-decoration-thickness:3px}
-.hero p{font-size:15px;color:rgba(2,4,37,.65);line-height:1.6}
-.hero-badge{display:inline-block;background:var(--navy);color:var(--gold);font-size:12px;font-weight:800;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.6}
+.hero-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:12px;font-weight:800;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px}
 
 /* ── 섹션 공통 ── */
 .wrap{max-width:640px;margin:0 auto;padding:0 20px}
@@ -63,19 +63,19 @@ section+section{border-top:1px solid var(--line)}
 .option-desc{font-size:12px;color:var(--gray)}
 
 /* ── 쿠폰 코드 박스 ── */
-.coupon-box{background:var(--navy);border-radius:16px;padding:28px 24px;text-align:center;margin:20px 0;position:relative;overflow:hidden}
+.coupon-box{background:var(--gold);border-radius:16px;padding:28px 24px;text-align:center;margin:20px 0;position:relative;overflow:hidden}
 .coupon-box::before,.coupon-box::after{content:'';position:absolute;width:32px;height:32px;background:#fff;border-radius:50%;top:50%;transform:translateY(-50%)}
 .coupon-box::before{left:-16px}
 .coupon-box::after{right:-16px}
-.coupon-label{font-size:12px;font-weight:800;letter-spacing:1px;color:rgba(255,255,255,.65);margin-bottom:8px;text-transform:uppercase}
-.coupon-code{font-size:28px;font-weight:800;color:#fff;letter-spacing:2px;margin-bottom:6px}
-.coupon-desc{font-size:12px;color:rgba(255,255,255,.65)}
+.coupon-label{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--navy);opacity:.6;margin-bottom:8px;text-transform:uppercase}
+.coupon-code{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:2px;margin-bottom:6px}
+.coupon-desc{font-size:12px;color:var(--navy);opacity:.65}
 
 /* ── 이용 방법 스텝 ── */
 .steps{display:flex;flex-direction:column;gap:0}
 .step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
 .step:last-child{border-bottom:none}
-.step-num{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--gold);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .step-body h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px}
 .step-body p{font-size:14px;color:var(--gray);line-height:1.5}
 .step-body .highlight{color:var(--navy);font-weight:800}
@@ -83,7 +83,7 @@ section+section{border-top:1px solid var(--line)}
 /* ── 서비스 범위 탭 ── */
 .tab-wrap{display:flex;gap:8px;margin-bottom:20px}
 .tab{flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;font-size:13px;font-weight:700;color:var(--gray);background:#fff;cursor:pointer;text-align:center;transition:.15s}
-.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tab.active{background:var(--gold);color:var(--navy);border-color:var(--gold)}
 .tab-content{display:none}
 .tab-content.active{display:block}
 .scope-section{margin-bottom:16px}
