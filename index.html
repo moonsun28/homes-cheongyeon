@@ -473,25 +473,17 @@ function submitEvent() {
 
   var url = SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&phone=' + encodeURIComponent(phone);
 
-  fetch(url, { redirect: 'follow' })
-    .then(function(r) { return r.json(); })
-    .then(function(data) {
-      if (data.success) {
-        clearForm();
-        document.getElementById('evt-success').style.display = 'block';
-        btn.style.display = 'none';
-      } else {
-        errEl.textContent = '오류가 발생했어요. 다시 시도해주세요.';
-        errEl.style.display = 'block';
-        btn.disabled = false;
-        btn.textContent = '이벤트 참여 신청하기';
-      }
-    })
-    .catch(function() {
-      // CORS 리다이렉트 이슈로 catch되더라도 실제로는 기록됨
+  fetch(url, { method: 'GET', mode: 'no-cors' })
+    .then(function() {
       clearForm();
       document.getElementById('evt-success').style.display = 'block';
       btn.style.display = 'none';
+    })
+    .catch(function() {
+      errEl.textContent = '오류가 발생했어요. 다시 시도해주세요.';
+      errEl.style.display = 'block';
+      btn.disabled = false;
+      btn.textContent = '이벤트 참여 신청하기';
     });
 }
 
