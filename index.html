@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HOMES × 청연 — 에어컨·원룸 청소 이벤트</title>
+<style>
+@font-face{font-family:'Pretendard';font-weight:400;src:url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Regular.woff2') format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:600;src:url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-SemiBold.woff2') format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:700;src:url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-Bold.woff2') format('woff2')}
+@font-face{font-family:'Pretendard';font-weight:800;src:url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/woff2/Pretendard-ExtraBold.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-weight:400;src:url('https://cdn.jsdelivr.net/npm/@fontsource/outfit@5/files/outfit-latin-400-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-weight:700;src:url('https://cdn.jsdelivr.net/npm/@fontsource/outfit@5/files/outfit-latin-700-normal.woff2') format('woff2')}
+@font-face{font-family:'Outfit';font-weight:800;src:url('https://cdn.jsdelivr.net/npm/@fontsource/outfit@5/files/outfit-latin-800-normal.woff2') format('woff2')}
+
+:root{
+  --gold:#FFCF0D;--goldink:#D99E00;--navy:#020425;
+  --cream:#F4F2EC;--creamline:#E7DDC6;
+  --ink:#212121;--gray:#6F7A83;--line:#e6e8ec;--soft:#f6f7f9;
+  --cyan:#00C8D4;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Pretendard',-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+
+/* ── 헤더 ── */
+header{height:60px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 24px;background:#fff;position:sticky;top:0;z-index:100}
+.logo svg{height:20px;width:auto}
+
+/* ── 히어로 ── */
+.hero{background:var(--navy);color:#fff;padding:52px 24px 48px;text-align:center}
+.hero-collab{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px}
+.homes-logo-white svg path{fill:#fff}
+.collab-x{font-size:18px;font-weight:800;color:rgba(255,255,255,.4)}
+.cheongyeon-logo{background:#fff;border-radius:8px;padding:5px 12px;display:flex;align-items:center}
+.cheongyeon-logo svg{height:22px;width:auto}
+.hero h1{font-size:34px;font-weight:800;line-height:1.25;margin-bottom:12px;letter-spacing:-.5px}
+.hero h1 em{color:var(--gold);font-style:normal}
+.hero p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.6}
+.hero-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:12px;font-weight:800;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px}
+
+/* ── 섹션 공통 ── */
+.wrap{max-width:640px;margin:0 auto;padding:0 20px}
+section{padding:40px 0}
+section+section{border-top:1px solid var(--line)}
+.section-label{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--goldink);text-transform:uppercase;margin-bottom:8px}
+.section-title{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.section-sub{font-size:15px;color:var(--gray);margin-bottom:20px}
+
+/* ── 혜택 카드 2열 ── */
+.benefit-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.benefit-card{border:1px solid var(--line);border-radius:14px;padding:20px;background:#fff}
+.benefit-card .icon{width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:18px;margin-bottom:12px}
+.icon-gold{background:var(--gold)}
+.icon-cyan{background:#E0FAFC}
+.benefit-card h3{font-size:15px;font-weight:800;color:var(--navy);margin-bottom:4px}
+.benefit-card .target{font-size:12px;color:var(--gray);margin-bottom:10px}
+.discount{font-size:30px;font-weight:800;color:var(--navy);line-height:1;margin-bottom:12px}
+.discount span{font-size:14px;font-weight:600}
+.check-list{list-style:none;display:flex;flex-direction:column;gap:6px}
+.check-list li{font-size:14px;color:var(--ink);display:flex;align-items:flex-start;gap:6px;line-height:1.4}
+.check-list li::before{content:'✓';color:var(--cyan);font-weight:800;flex-shrink:0;margin-top:1px}
+.option-tag{display:inline-block;background:var(--navy);color:#fff;font-size:12px;font-weight:700;padding:3px 8px;border-radius:5px;margin:8px 0 4px}
+.option-desc{font-size:12px;color:var(--gray)}
+
+/* ── 쿠폰 코드 박스 ── */
+.coupon-box{background:var(--gold);border-radius:16px;padding:28px 24px;text-align:center;margin:20px 0;position:relative;overflow:hidden}
+.coupon-box::before,.coupon-box::after{content:'';position:absolute;width:32px;height:32px;background:#fff;border-radius:50%;top:50%;transform:translateY(-50%)}
+.coupon-box::before{left:-16px}
+.coupon-box::after{right:-16px}
+.coupon-label{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--navy);opacity:.6;margin-bottom:8px;text-transform:uppercase}
+.coupon-code{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:2px;margin-bottom:6px}
+.coupon-desc{font-size:12px;color:var(--navy);opacity:.65}
+
+/* ── 이용 방법 스텝 ── */
+.steps{display:flex;flex-direction:column;gap:0}
+.step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.step:last-child{border-bottom:none}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-body h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px}
+.step-body p{font-size:14px;color:var(--gray);line-height:1.5}
+.step-body .highlight{color:var(--goldink);font-weight:700}
+
+/* ── 서비스 범위 탭 ── */
+.tab-wrap{display:flex;gap:8px;margin-bottom:20px}
+.tab{flex:1;padding:10px;border:1px solid var(--line);border-radius:10px;font-size:13px;font-weight:700;color:var(--gray);background:#fff;cursor:pointer;text-align:center;transition:.15s}
+.tab.active{background:var(--navy);color:#fff;border-color:var(--navy)}
+.tab-content{display:none}
+.tab-content.active{display:block}
+.scope-section{margin-bottom:16px}
+.scope-section h4{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px}
+.scope-section h4::before{content:'';width:3px;height:14px;background:var(--gold);border-radius:2px;display:inline-block}
+.scope-list{list-style:none;display:flex;flex-direction:column;gap:5px}
+.scope-list li{font-size:14px;color:var(--ink);display:flex;align-items:flex-start;gap:6px;line-height:1.4}
+.scope-list li::before{content:'·';color:var(--goldink);font-weight:800;flex-shrink:0}
+.not-included{background:var(--soft);border-radius:10px;padding:14px 16px;margin-top:12px}
+.not-included h4{font-size:12px;font-weight:800;color:var(--gray);margin-bottom:8px}
+.not-included li{font-size:12px;color:var(--gray)}
+.not-included li::before{color:var(--gray) !important}
+
+/* ── 유의사항 ── */
+.notice-list{list-style:none;display:flex;flex-direction:column;gap:8px}
+.notice-list li{font-size:14px;color:var(--gray);line-height:1.6;display:flex;align-items:flex-start;gap:8px}
+.notice-list li::before{content:'·';flex-shrink:0;font-weight:800;color:var(--goldink)}
+
+/* ── 푸터 ── */
+footer{background:var(--navy);color:rgba(255,255,255,.5);font-size:12px;text-align:center;padding:28px 20px;line-height:1.8}
+footer strong{color:rgba(255,255,255,.8)}
+
+@media(max-width:480px){
+  .benefit-grid{grid-template-columns:1fr}
+  .hero h1{font-size:26px}
+  .discount{font-size:24px}
+}
+</style>
+</head>
+<body>
+
+<!-- 헤더 -->
+<header>
+  <div class="logo">
+    <svg viewBox="0 0 107 22" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0 21.5V.5h4.04v8.54h8.33V.5h4.04v21h-4.04v-8.9H4.04v8.9H0zM20.1 11c0-6.56 3.9-11 9.73-11 5.84 0 9.73 4.44 9.73 11s-3.9 11-9.73 11C24 22 20.1 17.56 20.1 11zm15.36 0c0-4.56-2.2-7.54-5.63-7.54-3.44 0-5.63 2.98-5.63 7.54s2.19 7.54 5.63 7.54c3.43 0 5.63-2.98 5.63-7.54zM42.88 21.5V.5h4.25l6.05 13.18L59.23.5h4.25v21h-3.9V7.82L53.9 19.5h-1.44L46.78 7.82V21.5h-3.9zM67.7 21.5V.5h13.76v3.46H71.73v5.08h8.6v3.46h-8.6v5.54h9.73v3.46H67.7zM84.3 17.5l3.1-2.08c1.02 1.96 2.64 3.16 4.96 3.16 2.14 0 3.36-1.02 3.36-2.58 0-1.66-1.3-2.46-3.9-3.4-3.5-1.26-6.1-2.7-6.1-6.22C85.72 2.84 88.3.5 92.2.5c3.1 0 5.36 1.42 6.76 3.72l-2.96 2.1c-.94-1.58-2.2-2.5-3.8-2.5-1.8 0-2.88.9-2.88 2.3 0 1.56 1.14 2.24 3.7 3.18 3.62 1.32 6.34 2.74 6.34 6.38 0 3.72-2.76 6.32-7.2 6.32-3.52 0-6.2-1.56-7.86-4.5z" fill="#020425"/>
+    </svg>
+  </div>
+</header>
+
+<!-- 히어로 -->
+<div class="hero">
+  <div class="hero-collab">
+    <div class="homes-logo-white">
+      <svg viewBox="0 0 107 22" height="20" xmlns="http://www.w3.org/2000/svg">
+        <path d="M0 21.5V.5h4.04v8.54h8.33V.5h4.04v21h-4.04v-8.9H4.04v8.9H0zM20.1 11c0-6.56 3.9-11 9.73-11 5.84 0 9.73 4.44 9.73 11s-3.9 11-9.73 11C24 22 20.1 17.56 20.1 11zm15.36 0c0-4.56-2.2-7.54-5.63-7.54-3.44 0-5.63 2.98-5.63 7.54s2.19 7.54 5.63 7.54c3.43 0 5.63-2.98 5.63-7.54zM42.88 21.5V.5h4.25l6.05 13.18L59.23.5h4.25v21h-3.9V7.82L53.9 19.5h-1.44L46.78 7.82V21.5h-3.9zM67.7 21.5V.5h13.76v3.46H71.73v5.08h8.6v3.46h-8.6v5.54h9.73v3.46H67.7zM84.3 17.5l3.1-2.08c1.02 1.96 2.64 3.16 4.96 3.16 2.14 0 3.36-1.02 3.36-2.58 0-1.66-1.3-2.46-3.9-3.4-3.5-1.26-6.1-2.7-6.1-6.22C85.72 2.84 88.3.5 92.2.5c3.1 0 5.36 1.42 6.76 3.72l-2.96 2.1c-.94-1.58-2.2-2.5-3.8-2.5-1.8 0-2.88.9-2.88 2.3 0 1.56 1.14 2.24 3.7 3.18 3.62 1.32 6.34 2.74 6.34 6.38 0 3.72-2.76 6.32-7.2 6.32-3.52 0-6.2-1.56-7.86-4.5z" fill="#fff"/>
+      </svg>
+    </div>
+    <span class="collab-x">×</span>
+    <div class="cheongyeon-logo">
+      <!-- 청연 로고 텍스트 대체 -->
+      <span style="font-size:15px;font-weight:800;color:#00C8D4;letter-spacing:-0.5px">✳︎o 청연</span>
+    </div>
+  </div>
+  <div class="hero-badge">입주민 전용 제휴 혜택</div>
+  <h1>에어컨 청소,<br><em>언제 했더라?</em></h1>
+  <p>청소 업체 고민 끝! 날짜와 시간만 선택하면<br>청연에서 인증한 전문가가 청소해드려요</p>
+</div>
+
+
+<!-- USP 섹션 -->
+<div style="background:#fff;border-top:1px solid var(--line)">
+<div class="wrap">
+<section style="padding:36px 0">
+  <div class="section-label">Why 청연</div>
+  <div class="section-title" style="margin-bottom:20px">안심하고 맡길 수 있는 이유</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+    <div style="border:1px solid var(--line);border-radius:14px;padding:18px">
+      <div style="font-size:20px;margin-bottom:8px">🔒</div>
+      <div style="font-size:14px;font-weight:800;color:var(--navy);margin-bottom:6px">청연 인증 프로</div>
+      <div style="font-size:14px;color:var(--gray);line-height:1.6">청연이 직접 인증한 전문가만 방문합니다. 신원 미확인·미교육 매니저는 절대 방문하지 않아요.</div>
+    </div>
+    <div style="border:1px solid var(--line);border-radius:14px;padding:18px">
+      <div style="font-size:20px;margin-bottom:8px">🎧</div>
+      <div style="font-size:14px;font-weight:800;color:var(--navy);margin-bottom:6px">서비스 전후 CS 지원</div>
+      <div style="font-size:14px;color:var(--gray);line-height:1.6">챗봇이 아닌 전문 상담사가 365일 채팅·전화로 직접 응대합니다.</div>
+    </div>
+    <div style="border:1px solid var(--line);border-radius:14px;padding:18px">
+      <div style="font-size:20px;margin-bottom:8px">🛡️</div>
+      <div style="font-size:14px;font-weight:800;color:var(--navy);margin-bottom:6px">배상책임보험 가입</div>
+      <div style="font-size:14px;color:var(--gray);line-height:1.6">모든 매니저가 배상책임보험에 가입되어 있어 혹시 모를 사고에도 안심하세요.</div>
+    </div>
+    <div style="border:1px solid var(--line);border-radius:14px;padding:18px">
+      <div style="font-size:20px;margin-bottom:8px">✨</div>
+      <div style="font-size:14px;font-weight:800;color:var(--navy);margin-bottom:6px">맞춤 매니저 매칭</div>
+      <div style="font-size:14px;color:var(--gray);line-height:1.6">영유아·반려동물 유무 등 라이프스타일 정보를 입력하면 최적의 매니저를 매칭해 드려요.</div>
+    </div>
+  </div>
+</section>
+</div>
+</div>
+
+<div class="wrap">
+
+  <!-- 혜택 -->
+  <section>
+    <div class="section-label">Benefit</div>
+    <div class="section-title">입주민 전용 할인 혜택</div>
+    <div class="section-sub">쿠폰 코드 입력 시 아래 혜택이 자동 적용됩니다</div>
+    <div class="benefit-grid">
+
+      <!-- 원룸청소 -->
+      <div class="benefit-card">
+        <div class="icon icon-gold">🏠</div>
+        <h3>원룸 청소</h3>
+        <div class="target" style="color:var(--cyan);font-weight:700">신규 고객 대상</div>
+        <div class="discount">13,000<span>원 할인</span></div><div style="font-size:13px;color:var(--gray);margin-bottom:8px">1만원 · 3천원 쿠폰 2종 제공</div>
+        <ul class="check-list">
+          <li>주방 설거지·싱크대 정리</li>
+          <li>욕실 전체 청소</li>
+          <li>바닥 청소</li>
+        </ul>
+        <div class="option-tag">무료 옵션 1가지 선택</div>
+        <div class="option-desc">세탁 · 베란다 · 실내 창틀 중 1개</div>
+      </div>
+
+      <!-- 에어컨청소 -->
+      <div class="benefit-card">
+        <div class="icon icon-cyan">❄️</div>
+        <h3>에어컨 청소</h3>
+        <div class="target" style="color:var(--cyan);font-weight:700">신규·기존 고객 대상</div>
+        <div class="discount">7<span>% 할인</span></div><div style="font-size:13px;color:var(--gray);margin-bottom:8px">최대 10,000원 할인</div>
+        <ul class="check-list">
+          <li>분해 후 전체 기기·필터 세척</li>
+          <li>에어컨 커버 세척</li>
+          <li>송풍구 고압 세척</li>
+          <li>냉각핀 고압 세척</li>
+        </ul>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 쿠폰 코드 -->
+  <section>
+    <div class="section-label">Coupon</div>
+    <div class="section-title">쿠폰 코드</div>
+    <div class="section-sub">청연 앱에서 아래 코드를 입력하면 할인이 적용됩니다</div>
+    <div class="coupon-box">
+      <div class="coupon-label">Coupon Code</div>
+      <div class="coupon-code">나는홈즈에산다</div>
+      <div class="coupon-desc">가사 청소 14일 · 에어컨 청소 30일 이내 사용</div>
+    </div>
+  </section>
+
+  <!-- 이용 방법 -->
+  <section>
+    <div class="section-label">How to Use</div>
+    <div class="section-title">이용 방법</div>
+    <div class="section-sub">앱 다운로드부터 완료까지 4단계</div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <div class="step-body">
+          <h4>청연 앱 다운로드 및 회원가입</h4>
+          <p>App Store 또는 Google Play에서 <span class="highlight">청연</span> 검색 후 설치 · 회원가입 후 로그인해 주세요.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <div class="step-body">
+          <h4>쿠폰 코드 등록</h4>
+          <p>[더보기] → [쿠폰]을 누르고 쿠폰 번호 <span class="highlight">나는홈즈에산다</span>를 등록해 주세요.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <div class="step-body">
+          <h4>예약 및 쿠폰 적용</h4>
+          <p>[예약하기]를 누른 후 서비스 희망일을 설정하고, 결제 단계에서 쿠폰을 적용해 주세요.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <div class="step-body">
+          <h4>매니저 매칭 및 자동 결제</h4>
+          <p>담당 매니저가 매칭되면 할인된 금액으로 서비스 이용일 1일 전 자동 결제됩니다.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 서비스 범위 -->
+  <section>
+    <div class="section-label">Service Scope</div>
+    <div class="section-title">서비스 범위</div>
+    <div class="section-sub">서비스별 제공 항목을 확인하세요</div>
+    <div class="tab-wrap">
+      <button class="tab active" onclick="switchTab('aircon')">에어컨 청소</button>
+      <button class="tab" onclick="switchTab('room')">원룸 청소</button>
+    </div>
+
+    <!-- 에어컨 청소 -->
+    <div id="aircon" class="tab-content active">
+      <div class="scope-section">
+        <h4>기본 제공</h4>
+        <ul class="scope-list">
+          <li><strong style="font-weight:700">에어컨 분해 후 전체 기기 및 필터 세척</strong></li>
+          <li><strong style="font-weight:700">에어컨 커버 세척</strong></li>
+          <li><strong style="font-weight:700">송풍구 고압 세척</strong></li>
+          <li><strong style="font-weight:700">냉각핀 고압 세척</strong></li>
+          <li><strong style="font-weight:700">열교환기 고압 세척</strong></li>
+          <li><strong style="font-weight:700">분해 부품 클리닝</strong></li>
+        </ul>
+      </div>
+      <div class="scope-section">
+        <h4>서비스 순서</h4>
+        <ul class="scope-list">
+          <li><strong style="font-weight:700">제품 점검 (정상 가동상태 확인)</strong></li>
+          <li><strong style="font-weight:700">제품 분해 (커버 또는 케이스, 필터)</strong></li>
+          <li><strong style="font-weight:700">세척제 도포 → 열교환기 고압 세척</strong></li>
+          <li><strong style="font-weight:700">분해 부품 클리닝 → 건조</strong></li>
+          <li><strong style="font-weight:700">제품 조립 → 정상 가동 확인</strong></li>
+        </ul>
+      </div>
+      <div class="not-included">
+        <h4>미제공 항목</h4>
+        <ul class="scope-list not-included">
+          <li>이전·설치, 냉매충전, 실외기 및 배관 청소</li>
+          <li>액자형 에어컨 청소</li>
+          <li>창문형 에어컨 청소</li>
+          <li>서비스 공간 천고 3M 이상 시 진행 제한 (비용 추가 또는 진행 불가)</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 원룸 청소 -->
+    <div id="room" class="tab-content">
+      <div class="scope-section">
+        <h4>방</h4>
+        <ul class="scope-list">
+          <li><strong style="font-weight:700">소파, 책상, 화장대 등 가구 위 먼지 제거</strong></li>
+          <li><strong style="font-weight:700">청소기 및 막대걸레로 바닥 청소</strong></li>
+          <li><strong style="font-weight:700">참구 정리·정돈</strong></li>
+          <li><strong style="font-weight:700">물건 제자리 정리·정돈</strong></li>
+        </ul>
+      </div>
+      <div class="scope-section">
+        <h4>주방</h4>
+        <ul class="scope-list">
+          <li><strong style="font-weight:700">식탁 위 정리 및 설거지</strong></li>
+          <li><strong style="font-weight:700">가스렌지 및 인덕션 위 기름때 제거</strong></li>
+          <li><strong style="font-weight:700">싱크볼 및 거울면 세척</strong></li>
+        </ul>
+      </div>
+      <div class="scope-section">
+        <h4>화장실</h4>
+        <ul class="scope-list">
+          <li><strong style="font-weight:700">거울 물때 제거</strong></li>
+          <li><strong style="font-weight:700">전면 선반 청소 후 제자리 정돈</strong></li>
+          <li><strong style="font-weight:700">수전, 세면대, 변기 등 내/외부 청소</strong></li>
+          <li><strong style="font-weight:700">배수구 머리카락 제거 및 청소</strong></li>
+          <li><strong style="font-weight:700">바닥 물기 제거</strong></li>
+        </ul>
+      </div>
+      <div style="background:#E0FAFC;border-radius:10px;padding:12px 16px;margin-top:12px;font-size:13px;color:#007B87;font-weight:600">
+        ✓ 기본 청소 시 세탁·베란다·실내 창틀 중 1개 무료 선택 가능
+      </div>
+      <div class="not-included" style="margin-top:12px">
+        <h4>미제공 항목</h4>
+        <ul class="scope-list not-included">
+          <li>이사, 입주청소 및 인테리어 전후</li>
+          <li>TV, 컴퓨터 모니터 화면</li>
+          <li>손이 닿지 않는 곳</li>
+          <li>바닥 전체 무릎 꿇고 손걸레질</li>
+          <li>전문 수납 정리 및 옷장 정리</li>
+          <li>생활 폐기물 배출</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- 유의사항 -->
+  <section>
+    <div class="section-label">Notice</div>
+    <div class="section-title">유의사항</div>
+    <ul class="notice-list" style="margin-top:16px">
+      <li>가사(원룸) 청소 쿠폰은 등록 후 <strong>14일 이내</strong>, 에어컨 청소 쿠폰은 등록 후 <strong>30일 이내</strong> 사용해주세요.</li>
+      <li>본 쿠폰은 홈즈컴퍼니 입주민 전용으로, 타인에게 양도 및 공유할 수 없습니다.</li>
+      <li>원룸 청소 할인은 <strong>신규 고객</strong>에 한해 적용됩니다.</li>
+      <li>에어컨 청소 7% 할인은 신규·기존 고객 모두 적용됩니다.</li>
+      <li>서비스 공간 천고 3M 이상, 액자형·창문형 에어컨은 서비스 진행이 제한될 수 있습니다.</li>
+      <li>에어컨 내부 부품에 베인 냄새, 냉각 코팅 탈락에 의한 냄새는 청소로 제거가 어렵습니다.</li>
+      <li>기기 노후화, 작동 불가 등 현장 철수 시 출장비가 발생할 수 있습니다.</li>
+      <li>세척 전 차단기를 내리고 진행하므로 차단기 위치를 미리 확인해 주세요.</li>
+      <li>서비스 관련 문의는 청연 앱 고객센터를 이용해주세요.</li>
+    </ul>
+  </section>
+
+</div>
+
+<!-- 이벤트 (골드 배경, wrap 밖) -->
+<section style="background:var(--gold);padding:40px 0;border-top:1px solid var(--creamline)">
+<div class="wrap">
+    <div class="section-label" style="color:var(--navy);opacity:.6">Event</div>
+    <div class="section-title" style="color:var(--navy)">선착순 이벤트 🎉</div>
+    <div class="section-sub" style="color:var(--navy);opacity:.7">쿠폰 등록하고 배민상품권 받아가세요</div>
+
+    <div style="background:var(--navy);border-radius:16px;padding:24px;color:#fff;margin-bottom:20px">
+      <div style="display:flex;flex-direction:column;gap:12px">
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:12px;font-weight:800;color:var(--gold);letter-spacing:.5px;flex-shrink:0;padding-top:1px">혜택</span>
+          <span style="font-size:14px;color:#fff;font-weight:700">배민상품권 (선착순 20명)</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:12px;font-weight:800;color:var(--gold);letter-spacing:.5px;flex-shrink:0;padding-top:1px">참여방법</span>
+          <span style="font-size:14px;color:rgba(255,255,255,.85)">① 청연 앱에서 쿠폰 코드 <strong style="color:var(--gold)">나는홈즈에산다</strong> 등록 완료 → ② 아래 신청서 제출 <br><span style="font-size:12px;color:rgba(255,255,255,.55)">※ 쿠폰 미등록 시 당첨 대상에서 제외됩니다</span></span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:12px;font-weight:800;color:var(--gold);letter-spacing:.5px;flex-shrink:0;padding-top:1px">참여기간</span>
+          <span style="font-size:14px;color:rgba(255,255,255,.85)">2026년 7월 1일 ~ 7월 20일</span>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <span style="font-size:12px;font-weight:800;color:var(--gold);letter-spacing:.5px;flex-shrink:0;padding-top:1px">발표</span>
+          <span style="font-size:14px;color:rgba(255,255,255,.85)">2026년 7월 23일 (당첨자 개별 연락)</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid var(--line);border-radius:16px;padding:24px;background:#fff">
+      <div style="font-size:15px;font-weight:800;color:var(--navy);margin-bottom:4px">이벤트 참여 신청</div>
+      <div style="font-size:15px;color:var(--gray);margin-bottom:20px">청연 앱에서 쿠폰 등록 완료 후 아래 정보를 입력해주세요. 쿠폰 미등록자는 당첨 대상에서 제외됩니다.</div>
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div>
+          <label style="font-size:13px;font-weight:700;color:var(--navy);display:block;margin-bottom:6px">이름 <span style="color:#E53E3E">*</span></label>
+          <input id="evt-name" type="text" placeholder="홍길동" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:Pretendard,sans-serif;outline:none;color:var(--ink)" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--line)'">
+        </div>
+        <div>
+          <label style="font-size:13px;font-weight:700;color:var(--navy);display:block;margin-bottom:6px">전화번호 <span style="color:#E53E3E">*</span></label>
+          <input id="evt-phone" type="tel" placeholder="010-0000-0000" style="width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:Pretendard,sans-serif;outline:none;color:var(--ink)" onfocus="this.style.borderColor='var(--navy)'" onblur="this.style.borderColor='var(--line)'">
+        </div>
+        <div style="background:var(--soft);border-radius:10px;padding:16px">
+          <div style="font-size:13px;font-weight:700;color:var(--navy);margin-bottom:10px">개인정보 제3자 제공 동의 <span style="color:#E53E3E">*</span></div>
+          <div style="font-size:14px;color:var(--gray);line-height:1.7;margin-bottom:12px;border:1px solid var(--line);border-radius:8px;padding:12px;background:#fff">
+            <strong style="color:var(--navy);display:block;margin-bottom:6px">개인정보 제3자 제공 내용</strong>
+            · 제공받는 자: 홈즈컴퍼니<br>
+            · 제공 항목: 이름, 전화번호<br>
+            · 제공 목적: 이벤트 당첨자 선정 및 경품 발송<br>
+            · 보유 기간: 경품 발송 완료 후 즉시 파기<br><br>
+            위 개인정보 제3자 제공에 동의하지 않으실 수 있으나, 동의하지 않으실 경우 이벤트 참여가 불가합니다.
+          </div>
+          <label style="display:flex;align-items:center;gap:10px;cursor:pointer">
+            <input id="evt-agree" type="checkbox" style="width:18px;height:18px;accent-color:var(--navy);cursor:pointer;flex-shrink:0">
+            <span style="font-size:13px;font-weight:600;color:var(--navy)">개인정보 제3자 제공에 동의합니다</span>
+          </label>
+        </div>
+        <button onclick="submitEvent()" style="width:100%;padding:15px;background:var(--gold);color:var(--navy);font-size:15px;font-weight:800;font-family:Pretendard,sans-serif;border:none;border-radius:12px;cursor:pointer">
+          이벤트 참여 신청하기
+        </button>
+        <div id="evt-success" style="display:none;text-align:center;padding:16px;background:#F0FFF4;border:1px solid #9AE6B4;border-radius:10px;font-size:14px;font-weight:700;color:#276749">
+          ✅ 신청이 완료됐어요!<br>
+          <span style="font-size:12px;font-weight:400;color:#276749;margin-top:4px;display:block">당첨자 발표는 7월 23일 개별 연락 드립니다.</span>
+        </div>
+        <div id="evt-error" style="display:none;text-align:center;padding:12px;background:#FFF5F5;border:1px solid #FEB2B2;border-radius:10px;font-size:13px;font-weight:600;color:#C53030"></div>
+      </div>
+    </div>
+  </section>
+
+
+</div>
+
+<!-- 푸터 -->
+<footer>
+  <strong>HOMES Company × 청연</strong><br>
+  본 이벤트는 홈즈컴퍼니 입주민 전용 제휴 혜택입니다.<br>
+  문의: mslee@homes.global · 010-9280-6785
+</footer>
+
+<script>
+
+function submitEvent() {
+  var name = document.getElementById('evt-name').value.trim();
+  var phone = document.getElementById('evt-phone').value.trim();
+  var agree = document.getElementById('evt-agree').checked;
+  var errEl = document.getElementById('evt-error');
+  errEl.style.display = 'none';
+  if (!name) { errEl.textContent = '이름을 입력해주세요.'; errEl.style.display = 'block'; return; }
+  if (!phone) { errEl.textContent = '전화번호를 입력해주세요.'; errEl.style.display = 'block'; return; }
+  if (!agree) { errEl.textContent = '개인정보 제3자 제공에 동의해주세요.'; errEl.style.display = 'block'; return; }
+  document.getElementById('evt-success').style.display = 'block';
+  document.querySelector('[onclick="submitEvent()"]').style.display = 'none';
+}
+
+function switchTab(id) {
+  document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+  document.querySelectorAll('.tab-content').forEach(t => t.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+</script>
+</body>
+</html>
