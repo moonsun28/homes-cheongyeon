@@ -477,6 +477,7 @@ function submitEvent() {
     .then(function(r) { return r.json(); })
     .then(function(data) {
       if (data.success) {
+        clearForm();
         document.getElementById('evt-success').style.display = 'block';
         btn.style.display = 'none';
       } else {
@@ -488,9 +489,16 @@ function submitEvent() {
     })
     .catch(function() {
       // CORS 리다이렉트 이슈로 catch되더라도 실제로는 기록됨
+      clearForm();
       document.getElementById('evt-success').style.display = 'block';
       btn.style.display = 'none';
     });
+}
+
+function clearForm() {
+  document.getElementById('evt-name').value = '';
+  document.getElementById('evt-phone').value = '';
+  document.getElementById('evt-agree').checked = false;
 }
 
 function switchTab(id) {
