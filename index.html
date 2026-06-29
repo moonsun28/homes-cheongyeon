@@ -20,29 +20,29 @@
   --cyan:#00C8D4;
 }
 *{box-sizing:border-box;margin:0;padding:0}
-body{font-family:'Pretendard',-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased}
+body{font-family:'Pretendard',-apple-system,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;color:var(--ink);background:var(--gold);-webkit-font-smoothing:antialiased}
 
 /* ── 헤더 ── */
-header{height:60px;border-bottom:1px solid var(--line);display:flex;align-items:center;padding:0 24px;background:#fff;position:sticky;top:0;z-index:100}
+header{height:60px;border-bottom:1px solid rgba(2,4,37,.15);display:flex;align-items:center;padding:0 24px;background:var(--gold);position:sticky;top:0;z-index:100}
 .logo svg{height:20px;width:auto}
 
 /* ── 히어로 ── */
-.hero{background:var(--navy);color:#fff;padding:52px 24px 48px;text-align:center}
+.hero{background:var(--gold);color:var(--navy);padding:52px 24px 48px;text-align:center}
 .hero-collab{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:20px}
-.homes-logo-white svg path{fill:#fff}
-.collab-x{font-size:18px;font-weight:800;color:rgba(255,255,255,.4)}
+.homes-logo-white svg path{fill:var(--navy)}
+.collab-x{font-size:18px;font-weight:800;color:rgba(2,4,37,.4)}
 .cheongyeon-logo{background:#fff;border-radius:8px;padding:5px 12px;display:flex;align-items:center}
 .cheongyeon-logo svg{height:22px;width:auto}
 .hero h1{font-size:34px;font-weight:800;line-height:1.25;margin-bottom:12px;letter-spacing:-.5px}
-.hero h1 em{color:var(--gold);font-style:normal}
-.hero p{font-size:15px;color:rgba(255,255,255,.7);line-height:1.6}
-.hero-badge{display:inline-block;background:var(--gold);color:var(--navy);font-size:12px;font-weight:800;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px}
+.hero h1 em{color:var(--navy);font-style:normal;text-decoration:underline;text-decoration-thickness:3px}
+.hero p{font-size:15px;color:rgba(2,4,37,.65);line-height:1.6}
+.hero-badge{display:inline-block;background:var(--navy);color:var(--gold);font-size:12px;font-weight:800;padding:4px 14px;border-radius:20px;margin-bottom:18px;letter-spacing:.3px}
 
 /* ── 섹션 공통 ── */
 .wrap{max-width:640px;margin:0 auto;padding:0 20px}
 section{padding:40px 0}
 section+section{border-top:1px solid var(--line)}
-.section-label{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--goldink);text-transform:uppercase;margin-bottom:8px}
+.section-label{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--navy);text-transform:uppercase;margin-bottom:8px}
 .section-title{font-size:22px;font-weight:800;color:var(--navy);margin-bottom:4px}
 .section-sub{font-size:15px;color:var(--gray);margin-bottom:20px}
 
@@ -63,22 +63,22 @@ section+section{border-top:1px solid var(--line)}
 .option-desc{font-size:12px;color:var(--gray)}
 
 /* ── 쿠폰 코드 박스 ── */
-.coupon-box{background:var(--gold);border-radius:16px;padding:28px 24px;text-align:center;margin:20px 0;position:relative;overflow:hidden}
+.coupon-box{background:var(--navy);border-radius:16px;padding:28px 24px;text-align:center;margin:20px 0;position:relative;overflow:hidden}
 .coupon-box::before,.coupon-box::after{content:'';position:absolute;width:32px;height:32px;background:#fff;border-radius:50%;top:50%;transform:translateY(-50%)}
 .coupon-box::before{left:-16px}
 .coupon-box::after{right:-16px}
-.coupon-label{font-size:12px;font-weight:800;letter-spacing:1px;color:var(--navy);opacity:.6;margin-bottom:8px;text-transform:uppercase}
-.coupon-code{font-size:28px;font-weight:800;color:var(--navy);letter-spacing:2px;margin-bottom:6px}
-.coupon-desc{font-size:12px;color:var(--navy);opacity:.65}
+.coupon-label{font-size:12px;font-weight:800;letter-spacing:1px;color:rgba(255,255,255,.65);margin-bottom:8px;text-transform:uppercase}
+.coupon-code{font-size:28px;font-weight:800;color:#fff;letter-spacing:2px;margin-bottom:6px}
+.coupon-desc{font-size:12px;color:rgba(255,255,255,.65)}
 
 /* ── 이용 방법 스텝 ── */
 .steps{display:flex;flex-direction:column;gap:0}
 .step{display:flex;gap:16px;padding:16px 0;border-bottom:1px solid var(--line)}
 .step:last-child{border-bottom:none}
-.step-num{width:32px;height:32px;border-radius:50%;background:var(--gold);color:var(--navy);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+.step-num{width:32px;height:32px;border-radius:50%;background:var(--navy);color:var(--gold);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
 .step-body h4{font-size:15px;font-weight:700;color:var(--navy);margin-bottom:3px}
 .step-body p{font-size:14px;color:var(--gray);line-height:1.5}
-.step-body .highlight{color:var(--goldink);font-weight:700}
+.step-body .highlight{color:var(--navy);font-weight:800}
 
 /* ── 서비스 범위 탭 ── */
 .tab-wrap{display:flex;gap:8px;margin-bottom:20px}
@@ -88,7 +88,7 @@ section+section{border-top:1px solid var(--line)}
 .tab-content.active{display:block}
 .scope-section{margin-bottom:16px}
 .scope-section h4{font-size:13px;font-weight:800;color:var(--navy);margin-bottom:8px;display:flex;align-items:center;gap:6px}
-.scope-section h4::before{content:'';width:3px;height:14px;background:var(--gold);border-radius:2px;display:inline-block}
+.scope-section h4::before{content:'';width:3px;height:14px;background:var(--navy);border-radius:2px;display:inline-block}
 .scope-list{list-style:none;display:flex;flex-direction:column;gap:5px}
 .scope-list li{font-size:14px;color:var(--ink);display:flex;align-items:flex-start;gap:6px;line-height:1.4}
 .scope-list li::before{content:'·';color:var(--goldink);font-weight:800;flex-shrink:0}
@@ -100,7 +100,7 @@ section+section{border-top:1px solid var(--line)}
 /* ── 유의사항 ── */
 .notice-list{list-style:none;display:flex;flex-direction:column;gap:8px}
 .notice-list li{font-size:14px;color:var(--gray);line-height:1.6;display:flex;align-items:flex-start;gap:8px}
-.notice-list li::before{content:'·';flex-shrink:0;font-weight:800;color:var(--goldink)}
+.notice-list li::before{content:'·';flex-shrink:0;font-weight:800;color:var(--navy)}
 
 /* ── 푸터 ── */
 footer{background:var(--navy);color:rgba(255,255,255,.5);font-size:12px;text-align:center;padding:28px 20px;line-height:1.8}
@@ -376,13 +376,13 @@ footer strong{color:rgba(255,255,255,.8)}
 </div>
 
 <!-- 이벤트 (골드 배경, wrap 밖) -->
-<section style="background:var(--gold);padding:40px 0;border-top:1px solid var(--creamline)">
+<section style="background:var(--navy);padding:40px 0;border-top:1px solid rgba(2,4,37,.2)">
 <div class="wrap">
-    <div class="section-label" style="color:var(--navy);opacity:.6">Event</div>
-    <div class="section-title" style="color:var(--navy)">선착순 이벤트 🎉</div>
-    <div class="section-sub" style="color:var(--navy);opacity:.7">쿠폰 등록하고 배민상품권 받아가세요</div>
+    <div class="section-label" style="color:var(--gold);opacity:.85">Event</div>
+    <div class="section-title" style="color:#fff">선착순 이벤트 🎉</div>
+    <div class="section-sub" style="color:rgba(255,255,255,.7)">쿠폰 등록하고 배민상품권 받아가세요</div>
 
-    <div style="background:var(--navy);border-radius:16px;padding:24px;color:#fff;margin-bottom:20px">
+    <div style="background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);border-radius:16px;padding:24px;color:#fff;margin-bottom:20px">
       <div style="display:flex;flex-direction:column;gap:12px">
         <div style="display:flex;gap:12px;align-items:flex-start">
           <span style="font-size:12px;font-weight:800;color:var(--gold);letter-spacing:.5px;flex-shrink:0;padding-top:1px">혜택</span>
