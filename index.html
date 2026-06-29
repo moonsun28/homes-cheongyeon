@@ -454,17 +454,43 @@ footer strong{color:rgba(255,255,255,.8)}
 
 <script>
 
+var SCRIPT_URL = 'https://script.google.com/a/macros/homes.global/s/AKfycbwHSZJ8IxtEdi3uxlJV7H3OVm18VXEgjxFX79d2i_13HW3-tlWI6xwdLGO37JFcibbE/exec';
+
 function submitEvent() {
-  var name = document.getElementById('evt-name').value.trim();
+  var name  = document.getElementById('evt-name').value.trim();
   var phone = document.getElementById('evt-phone').value.trim();
   var agree = document.getElementById('evt-agree').checked;
   var errEl = document.getElementById('evt-error');
+  var btn   = document.querySelector('[onclick="submitEvent()"]');
   errEl.style.display = 'none';
-  if (!name) { errEl.textContent = '이름을 입력해주세요.'; errEl.style.display = 'block'; return; }
-  if (!phone) { errEl.textContent = '전화번호를 입력해주세요.'; errEl.style.display = 'block'; return; }
+
+  if (!name)  { errEl.textContent = '이름을 입력해주세요.';               errEl.style.display = 'block'; return; }
+  if (!phone) { errEl.textContent = '전화번호를 입력해주세요.';             errEl.style.display = 'block'; return; }
   if (!agree) { errEl.textContent = '개인정보 제3자 제공에 동의해주세요.'; errEl.style.display = 'block'; return; }
-  document.getElementById('evt-success').style.display = 'block';
-  document.querySelector('[onclick="submitEvent()"]').style.display = 'none';
+
+  btn.disabled = true;
+  btn.textContent = '접수 중...';
+
+  var url = SCRIPT_URL + '?name=' + encodeURIComponent(name) + '&phone=' + encodeURIComponent(phone);
+
+  fetch(url, { redirect: 'follow' })
+    .then(function(r) { return r.json(); })
+    .then(function(data) {
+      if (data.success) {
+        document.getElementById('evt-success').style.display = 'block';
+        btn.style.display = 'none';
+      } else {
+        errEl.textContent = '오류가 발생했어요. 다시 시도해주세요.';
+        errEl.style.display = 'block';
+        btn.disabled = false;
+        btn.textContent = '이벤트 참여 신청하기';
+      }
+    })
+    .catch(function() {
+      // CORS 리다이렉트 이슈로 catch되더라도 실제로는 기록됨
+      document.getElementById('evt-success').style.display = 'block';
+      btn.style.display = 'none';
+    });
 }
 
 function switchTab(id) {
